@@ -1,0 +1,132 @@
+:root {
+  --bg: #0b0f14;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.62);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --accent: #b7ff00;
+  --accent-soft: rgba(186, 255, 0, 0.6);
+
+  --header-h: 76px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  padding-top: var(--header-h);
+}
+
+section {
+  scroll-margin-top: calc(var(--header-h) + 26px);
+}
+
+/* LIGHT animated background (1 layer only) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  pointer-events: none;
+  z-index: -3;
+
+  background:
+    radial-gradient(900px 700px at 18% 22%, rgba(186, 255, 0, 0.06), transparent 62%),
+    radial-gradient(800px 650px at 82% 28%, rgba(186, 255, 0, 0.05), transparent 64%),
+    radial-gradient(1100px 900px at 55% 85%, rgba(255, 255, 255, 0.018), transparent 70%);
+
+  filter: blur(18px);
+  opacity: 0.95;
+  animation: bgLiquid 34s ease-in-out infinite alternate;
+}
+
+@keyframes bgLiquid {
+  0% { transform: translate3d(-1%, -1%, 0) scale(1); }
+  50% { transform: translate3d(1.5%, 1%, 0) scale(1.03); }
+  100% { transform: translate3d(-1%, 1.5%, 0) scale(1.02); }
+}
+
+/* Subtle vignette (cheap, no blur) */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background: radial-gradient(1200px 800px at 50% 30%, transparent, rgba(0, 0, 0, 0.55));
+}
+
+/* Section styles */
+.section {
+  position: relative;
+  padding: 8rem 0;
+}
+
+.section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section--glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 18, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section--solid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 18, 0.85);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section--designed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 600px at 15% 30%, rgba(186, 255, 0, 0.05), transparent 60%),
+    rgba(10, 14, 18, 0.38);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Designed overlay lines (no blur, no mask) */
+.section--designed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.06) 0px,
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
+}
