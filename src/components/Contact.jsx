@@ -1,41 +1,91 @@
+import { useState } from "react";
+
 export default function Contact() {
+  const [status, setStatus] = useState("idle");
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mwvpgqvb", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        form.reset();
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="section section--glass">
-      <div className="section__inner contact__inner">
-        <div className="contact__header">
-          <h2 className="contact__title">Contact</h2>
-          <p className="contact__subtitle">Send a message or find me online.</p>
-        </div>
+      <div className="section__inner">
+        <h2 className="section__title">Contact</h2>
+        <p className="section__subtitle">
+          Send a message or find me online.
+        </p>
 
         <div className="contact__grid">
-          <div className="contact__panel surface">
+          <div className="surface">
             <div className="contact__panelTitle">Send a message</div>
 
-            <form className="contactForm" onSubmit={(e) => e.preventDefault()}>
-              <label className="field">
-                <span className="field__label">Name</span>
-                <input className="field__input" placeholder="Your name" />
-              </label>
+            <form className="contactForm" onSubmit={onSubmit}>
+              <div className="field">
+                <div className="field__label">Name</div>
+                <input className="field__input" name="name" required />
+              </div>
 
-              <label className="field">
-                <span className="field__label">Email</span>
-                <input className="field__input" type="email" placeholder="you@example.com" />
-              </label>
+              <div className="field">
+                <div className="field__label">Email</div>
+                <input
+                  className="field__input"
+                  name="_replyto"
+                  type="email"
+                  required
+                />
+              </div>
 
-              <label className="field">
-                <span className="field__label">Message</span>
-                <textarea className="field__input" rows={5} placeholder="Write your message..." />
-              </label>
+              <div className="field">
+                <div className="field__label">Message</div>
+                <textarea
+                  className="field__input"
+                  name="message"
+                  rows="5"
+                  required
+                />
+              </div>
 
-              <button className="btn btn--primary" type="submit">
-                WORK IN PROGRESS
+              <button
+                className="btn btn--primary"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "Sending..." : "Send"}
               </button>
+
+              {status === "sent" && (
+                <div className="contactNote">Message sent ✅</div>
+              )}
+              {status === "error" && (
+                <div className="contactNote contactNote--error">
+                  Something went wrong.
+                </div>
+              )}
             </form>
           </div>
 
-          <div className="contact__panel contact__panel--socials surface">
+          <div className="surface">
             <div className="contact__panelTitle">Socials</div>
-
             <div className="socialList">
               <a
                 className="socialItem"
@@ -44,7 +94,9 @@ export default function Contact() {
                 rel="noreferrer"
               >
                 <div className="socialItem__name">GitHub</div>
-                <div className="socialItem__hint">github.com/KasparKoorits</div>
+                <div className="socialItem__hint">
+                  github.com/KasparKoorits
+                </div>
               </a>
             </div>
           </div>

@@ -69,3 +69,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+.contactNote {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.contactNote--error {
+  color: rgba(255, 120, 120, 0.9);
+}
+.contactNote--success {
+  color: rgba(120, 255, 120, 0.9);
+}
