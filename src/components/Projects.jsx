@@ -1,18 +1,18 @@
 const PROJECTS = [
   {
     title: "NBA Higher or Lower",
-    desc: "Guessing game using player PPG data",
-    stack: ["React", "MySQL", "Node"],
+    desc: "Guessing game using player data",
+    stack: ["HTML","CSS", "MySQL", "Node"],
   },
   {
     title: "Voting System",
     desc: "Database-driven voting app",
-    stack: ["PHP", "MySQL"],
+    stack: ["PHP", "MySQL", "CSS"],
   },
   {
     title: "Portfolio Website",
     desc: "Interactive personal portfolio",
-    stack: ["React", "Vite"],
+    stack: ["React", "Vite", "CSS"],
   },
 ];
 

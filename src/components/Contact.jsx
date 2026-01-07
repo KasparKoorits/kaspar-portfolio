@@ -28,7 +28,7 @@ export default function Contact() {
               </label>
 
               <button className="btn btn--primary" type="submit">
-                Send (soon)
+                WORK IN PROGRESS
               </button>
             </form>
           </div>
