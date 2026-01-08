@@ -1,19 +1,19 @@
 const projects = [
   {
     title: "NBA Higher or Lower",
-    desc: "Guessing game using player PPG data with login and dynamic content.",
+    desc: "Guessing game using real life player data.",
     tags: ["HTML","CSS", "MySQL", "JavaScript"],
     link: "#",
   },
   {
     title: "Voting System",
-    desc: "Database-driven voting app with triggers, vote updates, and live results UI.",
+    desc: "Database-driven voting app with triggers, vote updates, and live results.",
     tags: ["PHP", "MySQL"],
     link: "#",
   },
   {
     title: "Portfolio Website",
-    desc: "Interactive portfolio built with React + Vite.",
+    desc: "Interactive portfolio.",
     tags: ["React", "Vite", "CSS", ],
     link: "#",
   },
