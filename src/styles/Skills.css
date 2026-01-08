@@ -39,9 +39,7 @@
   margin-bottom: 1rem;
 }
 
-.panel__title {
-  font-weight: 800;
-}
+.panel__title { font-weight: 800; }
 
 .panel__tag {
   font-size: 0.8rem;
@@ -64,7 +62,5 @@
 }
 
 @media (max-width: 900px) {
-  .skills__grid {
-    grid-template-columns: 1fr;
-  }
+  .skills__grid { grid-template-columns: 1fr; }
 }

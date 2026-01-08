@@ -4,14 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 0 4rem;
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.hero--visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .hero__inner {
@@ -29,103 +21,45 @@
 
 .hero__subtitle {
   color: var(--muted);
-  margin: 0 0 1.8rem;
+  margin: 0 auto 1.6rem;
   font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 64ch;
 }
 
-/* CTA */
-.heroCta {
-  margin-top: 0.4rem;
+.hero__cta {
   border: 1px solid rgba(186, 255, 0, 0.55);
   background: rgba(186, 255, 0, 0.10);
   color: var(--text);
   border-radius: 999px;
   padding: 0.95rem 1.25rem;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
   font: inherit;
-
+  font-weight: 800;
+  letter-spacing: 0.2px;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.heroCta:hover {
+.hero__cta:hover {
   transform: translateY(-2px);
   border-color: rgba(186, 255, 0, 0.85);
   background: rgba(186, 255, 0, 0.14);
 }
 
-.heroCta__text {
-  font-weight: 800;
-  letter-spacing: 0.2px;
-}
-
-.heroCta__icon {
-  font-size: 1.1rem;
-  animation: heroCtaBounce 1.8s ease-in-out infinite;
-}
-
-@keyframes heroCtaBounce {
-  0%,
-  100% { transform: translateY(0); opacity: 0.75; }
-  50% { transform: translateY(5px); opacity: 1; }
-}
-
-.heroHint {
-  margin-top: 1.1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-.hero__title--animated {
-  position: relative;
+/* Friend-style: one-time staggered entrance */
+.hero-animate {
   opacity: 0;
   transform: translateY(14px);
-
-  animation:
-    nameEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
-    nameFloat 7.5s ease-in-out infinite;
-
-  animation-delay: 0.15s, 1s;
+  animation: heroEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* soft neon tint layer */
-.hero__title--animated::before {
-  content: "";
-  position: absolute;
-  inset: -12px -18px;
-  z-index: -1;
+.hero-delay-1 { animation-delay: 0.15s; }
+.hero-delay-2 { animation-delay: 0.3s; }
+.hero-delay-3 { animation-delay: 0.45s; }
 
-  background: radial-gradient(
-    60% 50% at 50% 60%,
-    rgba(186, 255, 0, 0.18),
-    transparent 70%
-  );
-
-  opacity: 0.65;
-  transform: translateY(0);
-  transition: opacity 0.3s ease;
-}
-
-@keyframes nameEnter {
+@keyframes heroEnter {
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes nameFloat {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-  100% {
     transform: translateY(0);
   }
 }

@@ -1,6 +1,4 @@
-.contact__header {
-  margin-bottom: 2.2rem;
-}
+.contact__header { margin-bottom: 2.2rem; }
 
 .contact__title {
   font-size: 1.6rem;
@@ -27,15 +25,9 @@
   margin-bottom: 1rem;
 }
 
-.contactForm {
-  display: grid;
-  gap: 1rem;
-}
+.contactForm { display: grid; gap: 1rem; }
 
-.socialList {
-  display: grid;
-  gap: 0.9rem;
-}
+.socialList { display: grid; gap: 0.9rem; }
 
 .socialItem {
   display: block;
@@ -54,20 +46,12 @@
   border-color: rgba(186, 255, 0, 0.35);
 }
 
-.socialItem__name {
-  font-weight: 800;
-}
+.socialItem__name { font-weight: 800; }
 
 .socialItem__hint {
   color: var(--muted);
   font-size: 0.9rem;
   margin-top: 0.15rem;
-}
-
-@media (max-width: 900px) {
-  .contact__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .contactNote {
@@ -78,6 +62,7 @@
 .contactNote--error {
   color: rgba(255, 120, 120, 0.9);
 }
-.contactNote--success {
-  color: rgba(120, 255, 120, 0.9);
+
+@media (max-width: 900px) {
+  .contact__grid { grid-template-columns: 1fr; }
 }

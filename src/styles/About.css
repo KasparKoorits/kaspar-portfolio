@@ -55,8 +55,5 @@
 }
 
 @media (max-width: 900px) {
-  .about__inner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+  .about__inner { grid-template-columns: 1fr; gap: 1.5rem; }
 }

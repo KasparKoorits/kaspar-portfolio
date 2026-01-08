@@ -1,12 +1,10 @@
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <div className="footer__left">
+        <div>
           <div className="footer__name">Kaspar Koorits</div>
-          <div className="footer__copy">© {year} Kaspar Koorits</div>
+          <div className="footer__copy">© {new Date().getFullYear()} • Built with React + Vite</div>
         </div>
 
         <div className="footer__right">

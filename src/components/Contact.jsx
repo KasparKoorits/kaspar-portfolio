@@ -31,10 +31,10 @@ export default function Contact() {
   return (
     <section id="contact" className="section section--glass">
       <div className="section__inner">
-        <h2 className="section__title">Contact</h2>
-        <p className="section__subtitle">
-          Send a message or find me online.
-        </p>
+        <div className="contact__header">
+          <h2 className="contact__title">Contact</h2>
+          <p className="contact__subtitle">Send a message or find me online.</p>
+        </div>
 
         <div className="contact__grid">
           <div className="surface">
@@ -48,38 +48,21 @@ export default function Contact() {
 
               <div className="field">
                 <div className="field__label">Email</div>
-                <input
-                  className="field__input"
-                  name="_replyto"
-                  type="email"
-                  required
-                />
+                <input className="field__input" name="_replyto" type="email" required />
               </div>
 
               <div className="field">
                 <div className="field__label">Message</div>
-                <textarea
-                  className="field__input"
-                  name="message"
-                  rows="5"
-                  required
-                />
+                <textarea className="field__input" name="message" rows="5" required />
               </div>
 
-              <button
-                className="btn btn--primary"
-                disabled={status === "sending"}
-              >
+              <button className="btn btn--primary" type="submit" disabled={status === "sending"}>
                 {status === "sending" ? "Sending..." : "Send"}
               </button>
 
-              {status === "sent" && (
-                <div className="contactNote">Message sent ✅</div>
-              )}
+              {status === "sent" && <div className="contactNote">Message sent ✅</div>}
               {status === "error" && (
-                <div className="contactNote contactNote--error">
-                  Something went wrong.
-                </div>
+                <div className="contactNote contactNote--error">Something went wrong.</div>
               )}
             </form>
           </div>
@@ -89,14 +72,17 @@ export default function Contact() {
             <div className="socialList">
               <a
                 className="socialItem"
-                href="https://github.com/KasparKoorits"
+                href="https://github.com/kasparkoorits"
                 target="_blank"
                 rel="noreferrer"
               >
                 <div className="socialItem__name">GitHub</div>
-                <div className="socialItem__hint">
-                  github.com/KasparKoorits
-                </div>
+                <div className="socialItem__hint">github.com/kasparkoorits</div>
+              </a>
+
+              <a className="socialItem" href="#" target="_blank" rel="noreferrer">
+                <div className="socialItem__name">LinkedIn</div>
+                <div className="socialItem__hint">Add your link</div>
               </a>
             </div>
           </div>

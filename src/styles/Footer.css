@@ -1,6 +1,7 @@
 .footer {
+  width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 14, 18, 0.75);
+  background: rgba(10, 14, 18, 0.85);
   padding: 2.2rem 0;
 }
 
@@ -15,7 +16,8 @@
 }
 
 .footer__name {
-  font-weight: 800;
+  font-weight: 900;
+  font-size: 1.05rem;
 }
 
 .footer__copy {
@@ -47,8 +49,5 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .footer__right {
-    justify-content: flex-start;
-  }
+  .footer__right { justify-content: flex-start; }
 }

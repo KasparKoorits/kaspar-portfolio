@@ -1,43 +1,53 @@
-const PROJECTS = [
+const projects = [
   {
     title: "NBA Higher or Lower",
-    desc: "Guessing game using player data",
-    stack: ["HTML","CSS", "MySQL", "Node"],
+    desc: "Guessing game using player PPG data with login and dynamic content.",
+    tags: ["React", "MySQL"],
+    link: "#",
   },
   {
     title: "Voting System",
-    desc: "Database-driven voting app",
-    stack: ["PHP", "MySQL", "CSS"],
+    desc: "Database-driven voting app with triggers, vote updates, and live results UI.",
+    tags: ["PHP", "MySQL"],
+    link: "#",
   },
   {
     title: "Portfolio Website",
-    desc: "Interactive personal portfolio",
-    stack: ["React", "Vite", "CSS"],
+    desc: "Interactive portfolio built with React + Vite, deployed and optimized for performance.",
+    tags: ["React", "Vite"],
+    link: "#",
   },
 ];
 
 export default function Projects() {
-
   return (
     <section id="projects" className="section section--designed">
-      <div className="section__inner projects__inner">
+      <div className="section__inner projects">
         <div className="projects__header">
           <h2 className="projects__title">Projects</h2>
           <p className="projects__subtitle">Some things I’ve built recently.</p>
         </div>
 
         <div className="projects__grid">
-          {PROJECTS.map((p) => (
-            <div key={p.title} className="projectCard surface surface--hover">
-              <div className="projectCard__title">{p.title}</div>
-              <div className="projectCard__sub">{p.desc}</div>
+          {projects.map((p) => (
+            <article key={p.title} className="project surface surface--hover">
+              <h3 className="project__title">{p.title}</h3>
+              <p className="project__desc">{p.desc}</p>
 
-              <div className="projectCard__stack">
-                {p.stack.map((t) => (
-                  <span key={t} className="chip">{t}</span>
+              <div className="project__tags">
+                {p.tags.map((t) => (
+                  <span key={t} className="chip">
+                    {t}
+                  </span>
                 ))}
               </div>
-            </div>
+
+              {p.link !== "#" && (
+                <a className="project__link" href={p.link} target="_blank" rel="noreferrer">
+                  Open
+                </a>
+              )}
+            </article>
           ))}
         </div>
       </div>
