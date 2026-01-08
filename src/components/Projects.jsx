@@ -2,7 +2,7 @@ const projects = [
   {
     title: "NBA Higher or Lower",
     desc: "Guessing game using player PPG data with login and dynamic content.",
-    tags: ["React", "MySQL"],
+    tags: ["HTML","CSS", "MySQL", "JavaScript"],
     link: "#",
   },
   {
@@ -13,8 +13,8 @@ const projects = [
   },
   {
     title: "Portfolio Website",
-    desc: "Interactive portfolio built with React + Vite, deployed and optimized for performance.",
-    tags: ["React", "Vite"],
+    desc: "Interactive portfolio built with React + Vite.",
+    tags: ["React", "Vite", "CSS", ],
     link: "#",
   },
 ];

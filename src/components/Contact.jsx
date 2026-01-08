@@ -79,11 +79,6 @@ export default function Contact() {
                 <div className="socialItem__name">GitHub</div>
                 <div className="socialItem__hint">github.com/kasparkoorits</div>
               </a>
-
-              <a className="socialItem" href="#" target="_blank" rel="noreferrer">
-                <div className="socialItem__name">LinkedIn</div>
-                <div className="socialItem__hint">Add your link</div>
-              </a>
             </div>
           </div>
         </div>
