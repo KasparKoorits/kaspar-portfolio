@@ -1,21 +1,36 @@
-import { useEffect, useRef, useState } from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+
+const INFO_CARDS = [
+  {
+    title: "Education",
+    content: (
+      <>
+        <div>Kõrveküla Põhikool (2014-2023)</div>
+        <div>Tartu Vocational College (2023-...)</div>
+      </>
+    ),
+  },
+  {
+    title: "Interests",
+    content: "Basketball • Motorsport • E-motorsports",
+  },
+  {
+    title: "Right now",
+    content: "Working on projects and picking up new skills along the way.",
+  },
+];
+
+function InfoCard({ title, content }) {
+  return (
+    <div className="about__card">
+      <div className="about__cardTitle">{title}</div>
+      <div className="about__cardText">{content}</div>
+    </div>
+  );
+}
 
 export default function About() {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0.2 }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const [ref, visible] = useIntersectionObserver();
 
   return (
     <section id="about" className="section section--glass">
@@ -31,21 +46,9 @@ export default function About() {
           </div>
 
           <div className="about__right">
-            <div className="about__card">
-              <div className="about__cardTitle">Education</div>
-              <div className="about__cardText">
-                <div>Kõrveküla Põhikool (2014-2023)</div>
-                <div>Tartu Vocational College (2023-...)</div>
-              </div>
-            </div>
-            <div className="about__card">
-              <div className="about__cardTitle">Interests</div>
-              <div className="about__cardText">Basketball • Motorsport • E-motorsports</div>
-            </div>
-            <div className="about__card">
-              <div className="about__cardTitle">Right now</div>
-              <div className="about__cardText">Working on projects and picking up new skills along the way.</div>
-            </div>
+            {INFO_CARDS.map((card) => (
+              <InfoCard key={card.title} {...card} />
+            ))}
           </div>
         </div>
       </div>

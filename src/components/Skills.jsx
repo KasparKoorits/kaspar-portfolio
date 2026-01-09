@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const groups = [
   { title: "Frontend", tag: "UI", items: ["HTML", "CSS", "JavaScript", "React"] },
@@ -7,21 +7,7 @@ const groups = [
 ];
 
 export default function Skills() {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const obs = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setVisible(true),
-      { threshold: 0.2 }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const [ref, visible] = useIntersectionObserver();
 
   return (
     <section id="skills" className="section section--solid">

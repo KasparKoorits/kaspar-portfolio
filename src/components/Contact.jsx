@@ -1,5 +1,37 @@
 import { useState } from "react";
 
+const SOCIAL_LINKS = [
+  {
+    name: "GitHub",
+    hint: "github.com/kasparkoorits",
+    url: "https://github.com/kasparkoorits",
+  },
+  {
+    name: "Instagram",
+    hint: "@KasparKoorits21",
+    url: "https://instagram.com/kasparkoorits21",
+  },
+  {
+    name: "Twitter/X",
+    hint: "@KasparKoorits21",
+    url: "https://twitter.com/kasparkoorits21",
+  },
+];
+
+const STATUS_MESSAGES = {
+  sent: { text: "Message sent ✅", error: false },
+  error: { text: "Something went wrong.", error: true },
+};
+
+function SocialLink({ name, hint, url }) {
+  return (
+    <a className="socialItem" href={url} target="_blank" rel="noreferrer">
+      <div className="socialItem__name">{name}</div>
+      <div className="socialItem__hint">{hint}</div>
+    </a>
+  );
+}
+
 export default function Contact() {
   const [status, setStatus] = useState("idle");
 
@@ -60,9 +92,10 @@ export default function Contact() {
                 {status === "sending" ? "Sending..." : "Send"}
               </button>
 
-              {status === "sent" && <div className="contactNote">Message sent ✅</div>}
-              {status === "error" && (
-                <div className="contactNote contactNote--error">Something went wrong.</div>
+              {STATUS_MESSAGES[status] && (
+                <div className={`contactNote ${STATUS_MESSAGES[status].error ? "contactNote--error" : ""}`}>
+                  {STATUS_MESSAGES[status].text}
+                </div>
               )}
             </form>
           </div>
@@ -70,33 +103,9 @@ export default function Contact() {
           <div className="surface">
             <div className="contact__panelTitle">Socials</div>
             <div className="socialList">
-              <a
-                className="socialItem"
-                href="https://github.com/kasparkoorits"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="socialItem__name">GitHub</div>
-                <div className="socialItem__hint">github.com/kasparkoorits</div>
-              </a>
-              <a
-                className="socialItem"
-                href="https://instagram.com/kasparkoorits21"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="socialItem__name">Instagram</div>
-                <div className="socialItem__hint">@KasparKoorits21</div>
-              </a>
-              <a
-                className="socialItem"
-                href="https://twitter.com/kasparkoorits21"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <div className="socialItem__name">Twitter/X</div>
-                <div className="socialItem__hint">@KasparKoorits21</div>
-              </a>
+              {SOCIAL_LINKS.map((link) => (
+                <SocialLink key={link.name} {...link} />
+              ))}
             </div>
           </div>
         </div>
