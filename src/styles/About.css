@@ -17,13 +17,16 @@
   font-size: 1.6rem;
   margin: 0 0 1rem;
   letter-spacing: -0.01em;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(183, 255, 0, 0.2);
 }
 
 .about__text {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
   margin: 0 0 1.3rem;
-  max-width: 62ch;
+  max-width: 85ch;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .about__right {
@@ -71,12 +74,14 @@
 }
 
 .about__cardTitle {
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 0.35rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 20px rgba(183, 255, 0, 0.15);
 }
 
 .about__cardText {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
 

@@ -32,16 +32,19 @@ export default function About() {
 
           <div className="about__right">
             <div className="about__card">
-              <div className="about__cardTitle">Focus</div>
-              <div className="about__cardText">Frontend, UI, and building reliable web apps.</div>
+              <div className="about__cardTitle">Education</div>
+              <div className="about__cardText">
+                <div>Kõrveküla Põhikool (2014-2023)</div>
+                <div>Tartu Vocational College (2023-...)</div>
+              </div>
             </div>
             <div className="about__card">
               <div className="about__cardTitle">Interests</div>
               <div className="about__cardText">Basketball • Motorsport • E-motorsports</div>
             </div>
             <div className="about__card">
-              <div className="about__cardTitle">Currently</div>
-              <div className="about__cardText">Building projects and learning something new every day.</div>
+              <div className="about__cardTitle">Right now</div>
+              <div className="about__cardText">Working on projects and picking up new skills along the way.</div>
             </div>
           </div>
         </div>

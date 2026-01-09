@@ -4,13 +4,16 @@
   font-size: 1.6rem;
   margin: 0 0 0.5rem;
   letter-spacing: -0.01em;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(183, 255, 0, 0.2);
 }
 
 .contact__subtitle {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.72);
   margin: 0;
   line-height: 1.6;
-  max-width: 60ch;
+  max-width: 85ch;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .contact__grid {
@@ -21,8 +24,9 @@
 }
 
 .contact__panelTitle {
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.94);
 }
 
 .contactForm { display: grid; gap: 1rem; }
@@ -47,10 +51,13 @@
   box-shadow: 0 4px 12px rgba(183, 255, 0, 0.1);
 }
 
-.socialItem__name { font-weight: 800; }
+.socialItem__name {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.94);
+}
 
 .socialItem__hint {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.9rem;
   margin-top: 0.15rem;
 }

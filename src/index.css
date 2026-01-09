@@ -1,8 +1,8 @@
 :root {
   --bg: #0b0f14;
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.62);
-  --border: rgba(255, 255, 255, 0.08);
+  --text: rgba(255, 255, 255, 0.96);
+  --muted: rgba(255, 255, 255, 0.68);
+  --border: rgba(255, 255, 255, 0.10);
   --accent: #b7ff00;
   --accent-soft: rgba(183, 255, 0, 0.35);
   --header-h: 76px;
@@ -134,7 +134,7 @@ body::after {
 }
 
 .section__inner {
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
