@@ -33,7 +33,7 @@ export default function Contact() {
       <div className="section__inner">
         <div className="contact__header">
           <h2 className="contact__title">Contact</h2>
-          <p className="contact__subtitle">Send a message or find me online.</p>
+          <p className="contact__subtitle">Send me a message or find me online.</p>
         </div>
 
         <div className="contact__grid">
@@ -78,6 +78,24 @@ export default function Contact() {
               >
                 <div className="socialItem__name">GitHub</div>
                 <div className="socialItem__hint">github.com/kasparkoorits</div>
+              </a>
+              <a
+                className="socialItem"
+                href="https://instagram.com/kasparkoorits21"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="socialItem__name">Instagram</div>
+                <div className="socialItem__hint">@KasparKoorits21</div>
+              </a>
+              <a
+                className="socialItem"
+                href="https://twitter.com/kasparkoorits21"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="socialItem__name">Twitter/X</div>
+                <div className="socialItem__hint">@KasparKoorits21</div>
               </a>
             </div>
           </div>

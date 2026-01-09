@@ -13,7 +13,7 @@ const projects = [
   },
   {
     title: "Portfolio Website",
-    desc: "Interactive portfolio.",
+    desc: "Personal portfolio website.",
     tags: ["React", "Vite", "CSS", ],
     link: "#",
   },
