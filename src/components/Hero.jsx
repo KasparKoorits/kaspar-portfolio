@@ -7,7 +7,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero__subtitle hero-animate hero-delay-2">
-          Aspiring software developer who enjoys building clean, interactive web experiences.
+          Aspiring software developer.
         </p>
 
         <button

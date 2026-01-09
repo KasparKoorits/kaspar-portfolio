@@ -36,12 +36,38 @@
   border-radius: 18px;
   padding: 1.1rem 1.2rem;
   background: rgba(15, 17, 21, 0.35);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.about__inner.is-visible .about__card {
+  animation: slideInRight 0.5s ease forwards;
+}
+
+.about__inner.is-visible .about__card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.about__inner.is-visible .about__card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.about__inner.is-visible .about__card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .about__card:hover {
   transform: translateY(-2px);
-  border-color: rgba(186, 255, 0, 0.35);
+  border-color: rgba(183, 255, 0, 0.35);
+  box-shadow: 0 4px 12px rgba(183, 255, 0, 0.1);
 }
 
 .about__cardTitle {

@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="footer__inner">
         <div>
           <div className="footer__name">Kaspar Koorits</div>
-          <div className="footer__copy">© {new Date().getFullYear()} • Built with React + Vite</div>
+          <div className="footer__copy">© {new Date().getFullYear()} Kaspar Koorits</div>
         </div>
 
         <div className="footer__right">
