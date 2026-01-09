@@ -15,7 +15,7 @@ export default function Skills() {
         <div ref={ref} className={`skills__inner ${visible ? "is-visible" : ""}`}>
           <div className="skills__header">
             <h2 className="skills__title">Skills</h2>
-            <p className="skills__subtitle">What I use to build projects.</p>
+            <p className="skills__subtitle">Stuff I use or have used before to make school projects and random ideas.</p>
           </div>
 
           <div className="skills__grid">
