@@ -41,7 +41,7 @@ export default function About() {
             <p className="about__text">
               Hello, I'm Kaspar Koorits and I'm studying software development at Tartu Vocational College.
               I enjoy turning my ideas and interests into working projects and improving step by step with every single one.
-              Outside of coding, I’m into playing basketball, watching all kinds of motorsports, and competing in e-motorsports.
+              Outside of coding, I’m into playing basketball and football, watching all kinds of motorsports, and competing in e-motorsports.
             </p>
           </div>
 
