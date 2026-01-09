@@ -40,8 +40,8 @@ export default function About() {
               <div className="about__cardText">Basketball • Motorsport • E-motorsports</div>
             </div>
             <div className="about__card">
-              <div className="about__cardTitle">Goal</div>
-              <div className="about__cardText">Internship where I can learn fast and ship real features.</div>
+              <div className="about__cardTitle">Currently</div>
+              <div className="about__cardText">Building projects and learning something new every day.</div>
             </div>
           </div>
         </div>
