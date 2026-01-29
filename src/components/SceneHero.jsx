@@ -20,10 +20,6 @@ function SceneHero() {
           Kaspar Koorits
         </h1>
 
-        <p className="mt-6 text-silver text-lg md:text-xl font-medium">
-          Aspiring software developer.
-        </p>
-
         <div className="mt-10">
           <button
             onClick={toAbout}

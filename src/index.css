@@ -35,6 +35,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  contain: layout style paint;
 }
 
 a { 
@@ -194,6 +195,8 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(8px) saturate(130%);
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   will-change: transform;
+  contain: layout style paint;
+  content-visibility: auto;
 }
 
 @media (max-width: 768px) {
@@ -211,6 +214,7 @@ h1, h2, h3, h4, h5, h6 {
   );
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  contain: layout style paint;
 }
 
 .muted { 
@@ -264,10 +268,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .pill:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
 }
 
 .pill.motorsport-theme:hover {
@@ -293,6 +299,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  will-change: transform;
+  contain: layout style paint;
 }
 
 .pill-simple:hover {
@@ -370,7 +378,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 32px rgba(220,20,60,0.20), 0 4px 16px rgba(0,0,0,0.3);
 }
 
-.sectionPad { padding: 120px 0; }
+.sectionPad { 
+  padding: 120px 0;
+  contain: layout style;
+}
 
 /* Premium themed accents */
 .accent-kendrick {
@@ -391,10 +402,11 @@ h1, h2, h3, h4, h5, h6 {
 /* hover effects */
 .hover-premium {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .hover-premium:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(183,255,0,0.15);
 }
 

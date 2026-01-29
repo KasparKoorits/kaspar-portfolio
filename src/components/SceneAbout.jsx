@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Interest items with labels and descriptions
@@ -13,6 +13,13 @@ const items = [
 export default function SceneAbout() {
   const [active, setActive] = useState(null);
   const activeItem = useMemo(() => items.find(x => x.id === active) ?? null, [active]);
+
+  const handleTagClick = useMemo(() =>
+    items.reduce((acc, item) => {
+      acc[item.id] = () => setActive(item.id);
+      return acc;
+    }, {}),
+    []);
 
   return (
     <section id="about" className="sectionPad">
@@ -70,30 +77,30 @@ export default function SceneAbout() {
                     {/* Mobile view - flex wrap */}
                     <div className="flex md:hidden flex-col gap-4">
                       <div className="flex gap-2 justify-start">
-                        <Tag active={active === "basketball"} onClick={() => setActive("basketball")} theme="basketball" label="🏀 Sports" />
-                        <Tag active={active === "ravens"} onClick={() => setActive("ravens")} theme="ravens" label="🏈 Ravens" />
+                        <Tag active={active === "basketball"} onClick={handleTagClick.basketball} theme="basketball" label="🏀 Sports" />
+                        <Tag active={active === "ravens"} onClick={handleTagClick.ravens} theme="ravens" label="🏈 Ravens" />
                       </div>
                       <div className="flex gap-2 justify-start ml-6">
-                        <Tag active={active === "simracing"} onClick={() => setActive("simracing")} theme="simracing" label="🏎️ Sim racing" />
-                        <Tag active={active === "motorsport"} onClick={() => setActive("motorsport")} theme="motorsport" label="🏁 Motorsport" />
+                        <Tag active={active === "simracing"} onClick={handleTagClick.simracing} theme="simracing" label="🏎️ Sim racing" />
+                        <Tag active={active === "motorsport"} onClick={handleTagClick.motorsport} theme="motorsport" label="🏁 Motorsport" />
                       </div>
                       <div className="flex gap-2 justify-start ml-12">
-                        <Tag active={active === "kendrick"} onClick={() => setActive("kendrick")} theme="kendrick" label="🎵 Music" />
+                        <Tag active={active === "kendrick"} onClick={handleTagClick.kendrick} theme="kendrick" label="🎵 Music" />
                       </div>
                     </div>
 
                     {/* Desktop view - structured rows */}
                     <div className="hidden md:flex flex-col gap-6">
                       <div className="flex gap-6">
-                        <Tag active={active === "basketball"} onClick={() => setActive("basketball")} theme="basketball" label="🏀 Sports" />
-                        <Tag active={active === "ravens"} onClick={() => setActive("ravens")} theme="ravens" label="🏈 Ravens" />
+                        <Tag active={active === "basketball"} onClick={handleTagClick.basketball} theme="basketball" label="🏀 Sports" />
+                        <Tag active={active === "ravens"} onClick={handleTagClick.ravens} theme="ravens" label="🏈 Ravens" />
                       </div>
                       <div className="flex gap-6 ml-12">
-                        <Tag active={active === "simracing"} onClick={() => setActive("simracing")} theme="simracing" label="🏎️ Sim racing" />
-                        <Tag active={active === "motorsport"} onClick={() => setActive("motorsport")} theme="motorsport" label="🏁 Motorsport" />
+                        <Tag active={active === "simracing"} onClick={handleTagClick.simracing} theme="simracing" label="🏎️ Sim racing" />
+                        <Tag active={active === "motorsport"} onClick={handleTagClick.motorsport} theme="motorsport" label="🏁 Motorsport" />
                       </div>
                       <div className="flex gap-6 ml-28">
-                        <Tag active={active === "kendrick"} onClick={() => setActive("kendrick")} theme="kendrick" label="🎵 Music" />
+                        <Tag active={active === "kendrick"} onClick={handleTagClick.kendrick} theme="kendrick" label="🎵 Music" />
                       </div>
                     </div>
 
@@ -177,14 +184,14 @@ export default function SceneAbout() {
   );
 }
 
-function Tag({ x, y, active, onClick, label, theme }) {
-  const styles = {
+const Tag = memo(function Tag({ active, onClick, label, theme }) {
+  const styles = useMemo(() => ({
     kendrick: { base: '!border-ravens-purple/30 hover:!border-ravens-purple/60 hover:bg-ravens-purple/8', active: '!border-ravens-purple/70 bg-ravens-purple/12' },
     basketball: { base: '!border-court-orange/20 hover:!border-court-orange/40 hover:bg-court-orange/8', active: '!border-court-orange/60 bg-court-orange/10' },
     ravens: { base: '!border-ravens-purple/20 hover:!border-ravens-purple/40 hover:bg-ravens-purple/8', active: '!border-ravens-purple/60 bg-ravens-purple/10' },
     simracing: { base: '!border-[#00D9FF]/20 hover:!border-[#00D9FF]/40 hover:bg-[#00D9FF]/8', active: '!border-[#00D9FF]/60 bg-[#00D9FF]/10' },
     motorsport: { base: 'motorsport-theme', active: '!border-kendrick-red/60 bg-kendrick-red/10' },
-  };
+  }), []);
 
   return (
     <motion.button
@@ -210,4 +217,4 @@ function Tag({ x, y, active, onClick, label, theme }) {
       <span className="pillMain">{label}</span>
     </motion.button>
   );
-}
+});

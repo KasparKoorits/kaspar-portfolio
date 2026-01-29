@@ -10,14 +10,18 @@ const SceneSkills = lazy(() => import("./components/SceneSkills.jsx"));
 const SceneEducation = lazy(() => import("./components/SceneEducation.jsx"));
 const SceneContact = lazy(() => import("./components/SceneContact.jsx"));
 
-const backgrounds = ['bgBase', 'bgGrid', 'bgGrain', 'bgScanlines'].map((cls, i) =>
-  memo(() => <div className={cls} />, { displayName: cls })
-);
+const BgBase = memo(() => <div className="bgBase" />, { displayName: 'BgBase' });
+const BgGrid = memo(() => <div className="bgGrid" />, { displayName: 'BgGrid' });
+const BgGrain = memo(() => <div className="bgGrain" />, { displayName: 'BgGrain' });
+const BgScanlines = memo(() => <div className="bgScanlines" />, { displayName: 'BgScanlines' });
 
 export default function App() {
   return (
     <>
-      {backgrounds.map((BgComponent, i) => <BgComponent key={i} />)}
+      <BgBase />
+      <BgGrid />
+      <BgGrain />
+      <BgScanlines />
 
       <Header />
 
