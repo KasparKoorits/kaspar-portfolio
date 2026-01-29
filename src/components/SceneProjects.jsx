@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { memo } from "react";
 
 const projects = [
@@ -12,7 +12,7 @@ function SceneProjects() {
   return (
     <section id="projects" className="sectionPad">
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
-        <m.div {...fadeUp}>
+        <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Projects · My Work</div>
           <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">Things</span> I've made
@@ -20,11 +20,11 @@ function SceneProjects() {
           <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             Projects I've worked on during my studies and free time. Just trying to build stuff and learn along the way.
           </div>
-        </m.div>
+        </motion.div>
 
         <div className="mt-8 sm:mt-10 grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-4 sm:gap-5">
           {projects.map((p, i) => (
-            <m.a
+            <motion.a
               key={p.title}
               href={p.link}
               target="_blank"
@@ -55,7 +55,7 @@ function SceneProjects() {
                   ))}
                 </div>
               </div>
-            </m.a>
+            </motion.a>
           ))}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { memo } from "react";
 
 const skills = [
@@ -14,7 +14,7 @@ function SceneSkills() {
   return (
     <section id="skills" className="sectionPad">
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
-        <m.div {...fadeUp}>
+        <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Skills · Tech Stack</div>
           <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">What</span> I use
@@ -22,11 +22,11 @@ function SceneSkills() {
           <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             Technologies I've picked up and used in different projects.
           </div>
-        </m.div>
+        </motion.div>
 
         <div className="mt-10 grid gap-6">
           {skills.map((g, idx) => (
-            <m.div
+            <motion.div
               key={g.group}
               className="ink p-6 border border-kendrick-red/20 hover:border-kendrick-red/40 transition-all duration-300"
               initial={{ opacity: 0, y: 16 }}
@@ -45,7 +45,7 @@ function SceneSkills() {
                   ))}
                 </div>
               </div>
-            </m.div>
+            </motion.div>
           ))}
         </div>
       </div>

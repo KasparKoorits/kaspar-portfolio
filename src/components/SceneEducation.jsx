@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { memo } from "react";
 
 const education = [
@@ -12,7 +12,7 @@ function SceneEducation() {
   return (
     <section id="education" className="sectionPad">
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
-        <m.div {...fadeUp}>
+        <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Education · Background</div>
           <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">Where</span> I've studied
@@ -20,11 +20,11 @@ function SceneEducation() {
           <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             My education from primary school to where I am now.
           </div>
-        </m.div>
+        </motion.div>
 
         <div className="mt-10 grid gap-6">
           {education.map((edu, idx) => (
-            <m.div
+            <motion.div
               key={edu.school}
               className="ink p-6 border border-kendrick-red/20 hover:border-kendrick-red/40 transition-all duration-300"
               initial={{ opacity: 0, y: 16 }}
@@ -39,7 +39,7 @@ function SceneEducation() {
                 </div>
                 <div className="text-cream/60 font-bold text-sm md:text-base tracking-wide">{edu.years}</div>
               </div>
-            </m.div>
+            </motion.div>
           ))}
         </div>
       </div>

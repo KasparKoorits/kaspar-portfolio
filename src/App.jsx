@@ -1,5 +1,4 @@
 import { memo, lazy, Suspense } from "react";
-import { LazyMotion, domAnimation } from "framer-motion";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import SceneHero from "./components/SceneHero.jsx";
@@ -17,7 +16,7 @@ const backgrounds = ['bgBase', 'bgGrid', 'bgGrain', 'bgScanlines'].map((cls, i) 
 
 export default function App() {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <>
       {backgrounds.map((BgComponent, i) => <BgComponent key={i} />)}
 
       <Header />
@@ -36,6 +35,6 @@ export default function App() {
         </div>
         <Footer />
       </main>
-    </LazyMotion>
+    </>
   );
 }

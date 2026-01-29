@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Interest items with labels and descriptions
 const items = [
@@ -25,7 +25,7 @@ export default function SceneAbout() {
         <div className="relative px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 sm:gap-12 lg:gap-16 items-start">
             <div>
-              <m.div
+              <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
@@ -35,9 +35,9 @@ export default function SceneAbout() {
                 <div className="mt-3 text-4xl md:text-6xl font-black tracking-[-0.03em] leading-[0.88] text-statement">
                   <span className="impact-text">A bit</span> about me
                 </div>
-              </m.div>
+              </motion.div>
 
-              <m.div
+              <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
@@ -105,10 +105,10 @@ export default function SceneAbout() {
                     </div>
                   </div>
                 </div>
-              </m.div>
+              </motion.div>
             </div>
 
-            <m.div
+            <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
@@ -131,7 +131,7 @@ export default function SceneAbout() {
                 <>
                   <div className="absolute -inset-8 rounded-[26px] bg-[radial-gradient(closest-side,rgba(183,255,0,0.10),transparent_70%)] blur-2xl" />
 
-                  <m.div
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
@@ -150,7 +150,7 @@ export default function SceneAbout() {
                     </div>
 
                     <AnimatePresence mode="wait">
-                      <m.div
+                      <motion.div
                         key={activeItem.id}
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -164,12 +164,12 @@ export default function SceneAbout() {
                         <div className="mt-4 text-cream/80 leading-relaxed font-medium text-lg">
                           {activeItem.body}
                         </div>
-                      </m.div>
+                      </motion.div>
                     </AnimatePresence>
-                  </m.div>
+                  </motion.div>
                 </>
               )}
-            </m.div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -187,7 +187,7 @@ function Tag({ x, y, active, onClick, label, theme }) {
   };
 
   return (
-    <m.button
+    <motion.button
       type="button"
       onClick={onClick}
       className={`pill transition-all duration-300 ${active ? styles[theme]?.active || "pillActive" : styles[theme]?.base || ""}`}
@@ -208,6 +208,6 @@ function Tag({ x, y, active, onClick, label, theme }) {
     >
       <span className="pillDot" />
       <span className="pillMain">{label}</span>
-    </m.button>
+    </motion.button>
   );
 }
