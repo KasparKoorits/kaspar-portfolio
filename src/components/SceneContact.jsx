@@ -7,7 +7,7 @@ const socialLinks = [
 ];
 
 const inputClass = "rounded-[12px] border border-kendrick-red/20 bg-white/[0.04] px-4 py-3 outline-none focus:border-kendrick-red/50 transition-colors text-cream placeholder:text-cream/40";
-const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25 }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
+const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25, margin: "0px 0px -100px 0px" }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
 
 function SceneContact() {
   return (

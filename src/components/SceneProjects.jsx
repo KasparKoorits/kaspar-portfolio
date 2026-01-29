@@ -6,7 +6,7 @@ const projects = [
   { title: "Scouting Portal", desc: "Web application for football scouts to track and manage player information.", tags: ["Node.JS", "CSS", "MySQL", "React", "Express"], link: "https://github.com/KasparKoorits/scout-portal" }
 ];
 
-const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25 }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
+const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25, margin: "0px 0px -100px 0px" }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
 
 function SceneProjects() {
   return (
@@ -32,7 +32,7 @@ function SceneProjects() {
               className="group relative ink p-6 hover:border-kendrick-red/50 transition-all duration-300 border border-kendrick-red/20 rounded-[18px] overflow-hidden"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
               transition={{ delay: 0.06 + i * 0.06, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6, scale: 1.02 }}
             >

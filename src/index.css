@@ -82,14 +82,23 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   background:
     /* Crimson red spotlight */
-    radial-gradient(1400px 900px at 20% 15%, rgba(220,20,60,0.22), transparent 55%),
+    radial-gradient(1400px 900px at 20% 15%, rgba(220,20,60,0.18), transparent 55%),
     /* Ravens purple - stronger accent */
-    radial-gradient(1300px 850px at 65% 55%, rgba(90,74,181,0.20), transparent 60%),
-    /* Silver accent (subtle) */
-    radial-gradient(1200px 800px at 80% 30%, rgba(192,192,192,0.08), transparent 60%),
+    radial-gradient(1300px 850px at 65% 55%, rgba(90,74,181,0.16), transparent 60%),
     /* Deep theatrical black base */
-    radial-gradient(1600px 1000px at 45% 50%, rgba(10,10,10,0.85), rgba(11,15,20,0.95));
+    radial-gradient(1600px 1000px at 45% 50%, rgba(11,15,20,0.95), rgba(11,15,20,0.98));
   transform: translate3d(0,0,0);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .bgBase {
+    background:
+      radial-gradient(1400px 900px at 20% 15%, rgba(220,20,60,0.22), transparent 55%),
+      radial-gradient(1300px 850px at 65% 55%, rgba(90,74,181,0.20), transparent 60%),
+      radial-gradient(1200px 800px at 80% 30%, rgba(192,192,192,0.08), transparent 60%),
+      radial-gradient(1600px 1000px at 45% 50%, rgba(10,10,10,0.85), rgba(11,15,20,0.95));
+  }
 }
 
 .bgGrid {
@@ -103,19 +112,35 @@ h1, h2, h3, h4, h5, h6 {
     /* Subtle grid pattern */
     repeating-linear-gradient(
       135deg,
-      rgba(220,20,60,0.04) 0px,
-      rgba(220,20,60,0.04) 1px,
+      rgba(220,20,60,0.03) 0px,
+      rgba(220,20,60,0.03) 1px,
       transparent 1px,
-      transparent 28px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,215,0,0.03) 0px,
-      rgba(255,215,0,0.03) 1px,
-      transparent 1px,
-      transparent 28px
+      transparent 40px
     );
-  opacity: 0.35;
+  opacity: 0.25;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .bgGrid {
+    background:
+      radial-gradient(1400px 1000px at 50% 30%, rgba(0,0,0,0.0), rgba(0,0,0,0.75)),
+      repeating-linear-gradient(
+        135deg,
+        rgba(220,20,60,0.04) 0px,
+        rgba(220,20,60,0.04) 1px,
+        transparent 1px,
+        transparent 28px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        rgba(255,215,0,0.03) 0px,
+        rgba(255,215,0,0.03) 1px,
+        transparent 1px,
+        transparent 28px
+      );
+    opacity: 0.35;
+  }
 }
 
 .bgGrain {
@@ -126,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
   opacity: 0.12;
   mix-blend-mode: overlay;
+  will-change: transform;
 }
 
 /* Cinematic scan lines (album cover aesthetic) */
@@ -141,7 +167,14 @@ h1, h2, h3, h4, h5, h6 {
     transparent 3px
   );
   opacity: 0.08;
-  animation: scanlines 8s linear infinite;
+  /* Only animate on mobile for better desktop performance */
+  animation: none;
+}
+
+@media (max-width: 768px) {
+  .bgScanlines {
+    animation: scanlines 8s linear infinite;
+  }
 }
 
 @keyframes scanlines {
@@ -158,8 +191,15 @@ h1, h2, h3, h4, h5, h6 {
     rgba(15,10,10,0.75) 0%,
     rgba(10,8,8,0.65) 100%
   );
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(130%);
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(12px) saturate(150%);
+  }
 }
 
 .ink {
@@ -374,11 +414,18 @@ h1, h2, h3, h4, h5, h6 {
 /*glass morphism */
 .glass-premium {
   background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(140%);
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 
     0 8px 32px 0 rgba(0,0,0,0.37),
     inset 0 1px 0 0 rgba(255,255,255,0.05);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .glass-premium {
+    backdrop-filter: blur(14px) saturate(160%);
+  }
 }
 
 /* Themed icon styles */

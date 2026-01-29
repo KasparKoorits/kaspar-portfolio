@@ -28,7 +28,7 @@ export default function SceneAbout() {
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
+                viewport={{ once: true, amount: 0.35, margin: "0px 0px -100px 0px" }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">About · Me</div>
@@ -40,7 +40,7 @@ export default function SceneAbout() {
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
+                viewport={{ once: true, amount: 0.35, margin: "0px 0px -100px 0px" }}
                 transition={{ delay: 0.06, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
                 className="mt-10"
               >
@@ -111,7 +111,7 @@ export default function SceneAbout() {
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
+              viewport={{ once: true, amount: 0.25, margin: "0px 0px -100px 0px" }}
               transition={{ delay: 0.05, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >

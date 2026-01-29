@@ -8,7 +8,7 @@ const skills = [
   { group: "Design", list: ["Figma", "Photoshop"] }
 ];
 
-const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25 }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
+const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25, margin: "0px 0px -100px 0px" }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
 
 function SceneSkills() {
   return (
@@ -31,7 +31,7 @@ function SceneSkills() {
               className="ink p-6 border border-kendrick-red/20 hover:border-kendrick-red/40 transition-all duration-300"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
               transition={{ delay: 0.06 + idx * 0.06, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
