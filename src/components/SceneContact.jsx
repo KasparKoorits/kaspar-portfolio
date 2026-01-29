@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { memo } from "react";
 
 const socialLinks = [
@@ -13,7 +13,7 @@ function SceneContact() {
   return (
     <section id="contact" className="sectionPad">
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
-        <motion.div {...fadeUp}>
+        <m.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Contact · Get in Touch</div>
           <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">Get</span> in touch
@@ -21,7 +21,7 @@ function SceneContact() {
           <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             Feel free to reach out if you want to chat or have any questions.
           </div>
-        </motion.div>
+        </m.div>
 
         <div className="mt-8 sm:mt-10 grid lg:grid-cols-2 gap-5 sm:gap-6">
           <form action="https://formspree.io/f/mwvpgqvb" method="POST" className="ink p-6 border border-kendrick-red/20">

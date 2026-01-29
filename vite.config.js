@@ -9,11 +9,16 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true,
-        passes: 2,
-        pure_funcs: ['console.log', 'console.info'],
+        passes: 3,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        dead_code: true,
+        unused: true,
       },
       mangle: {
         safari10: true,
+      },
+      format: {
+        comments: false,
       },
     },
     rollupOptions: {
@@ -38,13 +43,15 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     sourcemap: false,
-    chunkSizeWarningLimit: 600,
+    chunkSizeWarningLimit: 500,
     assetsInlineLimit: 4096,
+    reportCompressedSize: false,
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion'],
   },
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
+    legalComments: 'none',
   },
 });

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { memo, useCallback } from "react";
 
 function SceneHero() {
@@ -10,7 +10,7 @@ function SceneHero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -32,7 +32,7 @@ function SceneHero() {
             Learn more about me
           </button>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }
