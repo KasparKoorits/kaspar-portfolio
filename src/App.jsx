@@ -23,7 +23,7 @@ export default function App() {
 
       <main>
         <SceneHero />
-        <div className="relative bg-black/60 backdrop-blur-sm">
+        <div className="relative bg-black/70">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
             {/* Suspense shows fallback while sections load */}
             <Suspense fallback={<div className="min-h-[400px]" />}>
