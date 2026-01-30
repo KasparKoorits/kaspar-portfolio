@@ -6,7 +6,7 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/kaspar-koorits-2bb1a4245/", label: "LinkedIn" }
 ];
 
-const inputClass = "rounded-[12px] border border-kendrick-red/20 bg-white/[0.04] px-4 py-3 outline-none focus:border-kendrick-red/50 transition-colors text-cream placeholder:text-cream/40";
+const inputClass = "rounded-[12px] border border-kendrick-red/20 bg-white/[0.04] px-4 py-3 sm:py-3.5 text-base outline-none focus:border-kendrick-red/50 transition-colors text-cream placeholder:text-cream/40";
 const fadeUp = { initial: { opacity: 0, y: 14 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.25, margin: "0px 0px -100px 0px" }, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } };
 
 function SceneContact() {
@@ -47,17 +47,17 @@ function SceneContact() {
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
         <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Contact · Get in Touch</div>
-          <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
+          <div className="mt-3 text-2xl sm:text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">Get</span> in touch
           </div>
-          <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
-            Feel free to reach out if you want to chat or have any questions.
+          <div className="mt-4 text-base text-cream/75 max-w-[70ch] font-medium leading-relaxed">
+            Feel free to reach out to me.
           </div>
         </motion.div>
 
         <div className="mt-8 sm:mt-10 grid lg:grid-cols-2 gap-5 sm:gap-6">
           <form onSubmit={handleSubmit} className="ink p-6 border border-kendrick-red/20 relative">
-            <div className="font-black text-cream text-cinematic">Send a message</div>
+            <div className="font-black text-lg sm:text-xl text-cream text-cinematic">Send a message</div>
             <div className="mt-5 grid gap-4">
               <input type="text" name="name" required className={inputClass} placeholder="Your name" disabled={status === "sending"} />
               <input type="email" name="email" required className={inputClass} placeholder="your.email@example.com" disabled={status === "sending"} />
@@ -105,7 +105,7 @@ function SceneContact() {
           </form>
 
           <div className="ink p-6 border border-kendrick-red/20">
-            <div className="font-black text-cream text-cinematic">Connect with me</div>
+            <div className="font-black text-lg sm:text-xl text-cream text-cinematic">Connect with me</div>
             <div className="mt-5 grid gap-3">
               {socialLinks.map(link => (
                 <a key={link.label} className="pill justify-between hover:scale-[1.02] transition-transform" href={link.href} target="_blank" rel="noopener noreferrer">

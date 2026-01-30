@@ -39,7 +39,7 @@ export default function SceneAbout() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">About · Me</div>
-                <div className="mt-3 text-4xl md:text-6xl font-black tracking-[-0.03em] leading-[0.88] text-statement">
+                <div className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.03em] leading-[0.88] text-statement">
                   <span className="impact-text">A bit</span> about me
                 </div>
               </motion.div>
@@ -60,14 +60,18 @@ export default function SceneAbout() {
                     </div>
 
                     <div className="min-w-0 pt-1">
-                      <div className="text-xl md:text-2xl font-black tracking-tight text-cream text-cinematic">
+                      <div className="text-2xl md:text-2xl font-black tracking-tight text-cream text-cinematic">
                         Kaspar Koorits
                       </div>
-                      <div className="mt-1 text-sm md:text-[0.98rem] text-purple font-bold uppercase tracking-wide">
+                      <div className="mt-1 text-base md:text-[0.98rem] text-purple font-bold uppercase tracking-wide">
                         3rd year @ Tartu Vocational College
                       </div>
-                      <div className="mt-4 text-sm md:text-[0.98rem] text-cream/85 leading-relaxed font-medium">
-                        Studying software development and working on projects that interest me. Learning how things work under the hood and trying to make them better.
+                      <div className="mt-4 text-base md:text-[0.98rem] text-cream/85 leading-relaxed font-medium">
+                        My name is Kaspar Koorits, and I am 18 years old. I am currently studying software development at the Tartu Vocational College.
+
+                        I chose this field because I have always been interested in computers and technology. Although I only had really basic knowledge of software development from my middle school, Kõrveküla Põhikool, I wanted to learn more and develop further.
+
+                        In my free time I enjoy playing basketball, watching different sports, playing video games, competing in esports and listening to music.
                       </div>
                     </div>
                   </div>
@@ -125,10 +129,10 @@ export default function SceneAbout() {
               {!activeItem && (
                 <div className="relative rounded-[22px] border border-kendrick-red/15 bg-gradient-to-br from-kendrick-red/5 via-ravens-purple/5 to-transparent p-7 md:p-8 overflow-hidden">
                   <div className="relative text-center py-16">
-                    <div className="text-2xl md:text-3xl font-black text-cream/60 tracking-tight">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-black text-cream/60 tracking-tight">
                       Select an interest
                     </div>
-                    <div className="mt-3 text-cream/40 font-medium">
+                    <div className="mt-3 text-base text-cream/40 font-medium">
                       to see what I'm about
                     </div>
                   </div>
@@ -165,10 +169,10 @@ export default function SceneAbout() {
                         transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                         className="mt-6"
                       >
-                        <div className="text-2xl md:text-4xl font-black tracking-tight text-cream text-statement">
+                        <div className="text-xl sm:text-2xl md:text-4xl font-black tracking-tight text-cream text-statement">
                           {activeItem.label}
                         </div>
-                        <div className="mt-4 text-cream/80 leading-relaxed font-medium text-lg">
+                        <div className="mt-4 text-base sm:text-lg text-cream/80 leading-relaxed font-medium">
                           {activeItem.body}
                         </div>
                       </motion.div>

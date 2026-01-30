@@ -14,10 +14,10 @@ function SceneEducation() {
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
         <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Education · Background</div>
-          <div className="mt-3 text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
+          <div className="mt-3 text-2xl sm:text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
             <span className="impact-text">Where</span> I've studied
           </div>
-          <div className="mt-4 text-cream/75 max-w-[70ch] font-medium leading-relaxed">
+          <div className="mt-4 text-base text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             My education from primary school to where I am now.
           </div>
         </motion.div>
@@ -34,10 +34,10 @@ function SceneEducation() {
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                 <div>
-                  <div className="font-black tracking-tight text-xl text-cream text-cinematic">{edu.school}</div>
-                  <div className="mt-1 text-silver/80 font-semibold text-sm">{edu.program}</div>
+                  <div className="font-black tracking-tight text-lg sm:text-xl text-cream text-cinematic">{edu.school}</div>
+                  <div className="mt-1 text-silver/80 font-semibold text-sm sm:text-base">{edu.program}</div>
                 </div>
-                <div className="text-cream/60 font-bold text-sm md:text-base tracking-wide">{edu.years}</div>
+                <div className="text-cream/60 font-bold text-sm sm:text-base tracking-wide">{edu.years}</div>
               </div>
             </motion.div>
           ))}

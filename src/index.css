@@ -3,58 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0b0f14;
-  --text: rgba(255,250,245,0.95);
-  --text-primary: rgba(220,20,60,0.95);
-  --text-silver: rgba(192,192,192,0.95);
-  --text-cream: rgba(255,248,220,0.88);
-  --muted: rgba(255,245,235,0.60);
-  --border: rgba(220,20,60,0.15);
-  --ferrari: #DC0000;
   --kendrick-red: #DC143C;
   --ravens-purple: #5A4AB5;
   --silver: #C0C0C0;
-  --basketball: #FF8C00;
-  --header-h: 76px;
+  --text-cream: rgba(255,248,220,0.88);
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; }
-html {
-  overflow-x: hidden;
-}
+html, body { height: 100%; overflow-x: hidden; }
 body {
   margin: 0;
   background: #0a0a0a;
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: rgba(255,250,245,0.95);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
   font-weight: 500;
-  overflow-x: hidden;
-  width: 100%;
-  letter-spacing: -0.01em;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  contain: layout style paint;
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
 }
 
 a { 
   color: inherit; 
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
-/* Bold Kendrick-inspired heading styles */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--text-cream);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  line-height: 0.9;
-}
-
-/* DAMN. style impact text */
 .impact-text {
   font-weight: 900;
   letter-spacing: -0.03em;
@@ -63,43 +38,25 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
 }
 
-/* Album cover style subtitle */
 .subtitle-text {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-size: 0.7em;
-  color: var(--text-silver);
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: var(--silver);
 }
 
 .bgBase {
   position: fixed;
-  inset: -35%;
+  inset: 0;
   z-index: -3;
   pointer-events: none;
   background:
-    /* Crimson red spotlight */
-    radial-gradient(1400px 900px at 20% 15%, rgba(220,20,60,0.18), transparent 55%),
-    /* Ravens purple - stronger accent */
-    radial-gradient(1300px 850px at 65% 55%, rgba(90,74,181,0.16), transparent 60%),
-    /* Deep theatrical black base */
-    radial-gradient(1600px 1000px at 45% 50%, rgba(11,15,20,0.95), rgba(11,15,20,0.98));
-  transform: translate3d(0,0,0);
-  will-change: transform;
-}
-
-@media (max-width: 768px) {
-  .bgBase {
-    background:
-      radial-gradient(1400px 900px at 20% 15%, rgba(220,20,60,0.22), transparent 55%),
-      radial-gradient(1300px 850px at 65% 55%, rgba(90,74,181,0.20), transparent 60%),
-      radial-gradient(1200px 800px at 80% 30%, rgba(192,192,192,0.08), transparent 60%),
-      radial-gradient(1600px 1000px at 45% 50%, rgba(10,10,10,0.85), rgba(11,15,20,0.95));
-  }
+    radial-gradient(1200px 800px at 25% 20%, rgba(220,20,60,0.25), transparent 60%),
+    radial-gradient(1100px 750px at 75% 50%, rgba(90,74,181,0.22), transparent 65%),
+    radial-gradient(ellipse at 50% 50%, rgba(15,15,20,1), rgba(10,10,15,1));
 }
 
 .bgGrid {
@@ -108,212 +65,54 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -2;
   pointer-events: none;
   background:
-    /* Spotlight vignette effect (DAMN. aesthetic) */
-    radial-gradient(1400px 1000px at 50% 30%, rgba(0,0,0,0.0), rgba(0,0,0,0.75)),
-    /* Subtle grid pattern */
-    repeating-linear-gradient(
-      135deg,
-      rgba(220,20,60,0.03) 0px,
-      rgba(220,20,60,0.03) 1px,
-      transparent 1px,
-      transparent 40px
-    );
+    radial-gradient(1400px 1000px at 50% 30%, transparent, rgba(0,0,0,0.75)),
+    repeating-linear-gradient(135deg, rgba(220,20,60,0.03) 0px, rgba(220,20,60,0.03) 1px, transparent 1px, transparent 40px);
   opacity: 0.25;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .bgGrid {
-    background:
-      radial-gradient(1400px 1000px at 50% 30%, rgba(0,0,0,0.0), rgba(0,0,0,0.75)),
-      repeating-linear-gradient(
-        135deg,
-        rgba(220,20,60,0.04) 0px,
-        rgba(220,20,60,0.04) 1px,
-        transparent 1px,
-        transparent 28px
-      ),
-      repeating-linear-gradient(
-        45deg,
-        rgba(255,215,0,0.03) 0px,
-        rgba(255,215,0,0.03) 1px,
-        transparent 1px,
-        transparent 28px
-      );
-    opacity: 0.35;
-  }
-}
-
-.bgGrain {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
-  opacity: 0.12;
-  mix-blend-mode: overlay;
-  will-change: transform;
-}
-
-/* Cinematic scan lines (album cover aesthetic) */
-.bgScanlines {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0,0,0,0.15) 0px,
-    transparent 1px,
-    transparent 3px
-  );
-  opacity: 0.08;
-  /* Only animate on mobile for better desktop performance */
-  animation: none;
-}
-
-@media (max-width: 768px) {
-  .bgScanlines {
-    animation: scanlines 8s linear infinite;
-  }
-}
-
-@keyframes scanlines {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(8px); }
-}
-
-/* Glass effects */
 .glass {
   border-radius: 28px;
   border: 1px solid rgba(220,20,60,0.18);
-  background: linear-gradient(
-    135deg,
-    rgba(15,10,10,0.75) 0%,
-    rgba(10,8,8,0.65) 100%
-  );
+  background: linear-gradient(135deg, rgba(15,10,10,0.75), rgba(10,8,8,0.65));
   backdrop-filter: blur(8px) saturate(130%);
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-  will-change: transform;
-  contain: layout style paint;
-  content-visibility: auto;
-}
-
-@media (max-width: 768px) {
-  .glass {
-    backdrop-filter: blur(12px) saturate(150%);
-  }
 }
 
 .ink {
   border: 1px solid rgba(220,20,60,0.12);
-  background: linear-gradient(
-    135deg,
-    rgba(20,15,15,0.35) 0%,
-    rgba(15,10,10,0.25) 100%
-  );
+  background: linear-gradient(135deg, rgba(20,15,15,0.35), rgba(15,10,10,0.25));
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  contain: layout style paint;
 }
 
-.muted { 
-  color: var(--muted); 
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Text color utilities */
-.text-kendrick { 
-  color: var(--kendrick-red);
-}
-
-.text-silver { 
-  color: var(--silver);
-}
-
-.text-purple {
-  color: var(--ravens-purple);
-}
-
-.text-cream { 
-  color: var(--text-cream);
-}
-
-/* Cinematic text shadow */
-.text-cinematic {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-/* Bold statement text (like album titles) */
+.text-kendrick { color: var(--kendrick-red); }
+.text-silver { color: var(--silver); }
+.text-purple { color: var(--ravens-purple); }
+.text-cream { color: var(--text-cream); }
+.text-cinematic { text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
 .text-statement {
   font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
   color: var(--text-cream);
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
-.pill {
+.pill, .pill-simple {
   border: 1px solid rgba(220,20,60,0.15);
-  background: linear-gradient(
-    135deg,
-    rgba(20,15,15,0.40) 0%,
-    rgba(15,10,10,0.30) 100%
-  );
+  background: linear-gradient(135deg, rgba(20,15,15,0.40), rgba(15,10,10,0.30));
   border-radius: 999px;
   padding: 10px 14px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  position: relative;
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 280ms ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  will-change: transform;
-  contain: layout style paint;
 }
 
-.pill:hover {
-  transform: translateY(-2px) translateZ(0);
-}
-
-.pill.motorsport-theme:hover {
-  border-color: rgba(220,20,60,0.50) !important;
-  background: linear-gradient(
-    135deg,
-    rgba(220,20,60,0.12) 0%,
-    rgba(139,69,19,0.08) 100%
-  ) !important;
-}
-
-.pill-simple {
-  border: 1px solid rgba(220,20,60,0.15);
-  background: linear-gradient(
-    135deg,
-    rgba(20,15,15,0.40) 0%,
-    rgba(15,10,10,0.30) 100%
-  );
-  border-radius: 999px;
-  padding: 10px 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  will-change: transform;
-  contain: layout style paint;
-}
-
-.pill-simple:hover {
+.pill:hover, .pill-simple:hover {
+  transform: translateY(-2px);
   border-color: rgba(220,20,60,0.65);
-  background: linear-gradient(
-    135deg,
-    rgba(220,20,60,0.15) 0%,
-    rgba(139,69,19,0.10) 100%
-  );
-  box-shadow: 
-    0 0 24px rgba(220,20,60,0.35),
-    0 0 48px rgba(220,20,60,0.20),
-    0 4px 16px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, rgba(220,20,60,0.15), rgba(139,69,19,0.10));
+  box-shadow: 0 0 24px rgba(220,20,60,0.35), 0 4px 16px rgba(0,0,0,0.3);
 }
 
 .pillDot {
@@ -321,18 +120,12 @@ h1, h2, h3, h4, h5, h6 {
   height: 8px;
   border-radius: 999px;
   background: rgba(220,20,60,0.45);
-  box-shadow: 0 0 0 rgba(220,20,60,0);
-  transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 220ms ease;
 }
 
-.pill:hover .pillDot {
+.pill:hover .pillDot, .pill-simple:hover .pillDot {
   background: rgba(220,20,60,0.95);
   box-shadow: 0 0 18px rgba(220,20,60,0.40);
-}
-
-.pill-simple:hover .pillDot {
-  background: rgba(220,20,60,0.95);
-  box-shadow: 0 0 20px rgba(220,20,60,0.50);
 }
 
 .pillMain {
@@ -342,118 +135,16 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  text-shadow: 
-    0 1px 2px rgba(0,0,0,0.4),
-    0 0 8px rgba(220,20,60,0.15);
 }
 
-.pillMore {
-  position: absolute;
-  left: calc(100% + 6px);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-gold);
-  text-transform: lowercase;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  opacity: 0;
-  transition: opacity 250ms ease;
-  pointer-events: none;
-}
-
-.pill:hover .pillMore {
-  opacity: 1;
-}
-
-.pillActive {
-  border-color: rgba(220,20,60,0.65);
-  background: linear-gradient(
-    135deg,
-    rgba(220,20,60,0.18) 0%,
-    rgba(139,69,19,0.12) 100%
-  );
-  box-shadow: 0 0 32px rgba(220,20,60,0.20), 0 4px 16px rgba(0,0,0,0.3);
+@media (max-width: 640px) {
+  .pillMain { font-size: 12px; }
 }
 
 .sectionPad { 
-  padding: 120px 0;
-  contain: layout style;
+  padding: 60px 0;
 }
 
-/* Premium themed accents */
-.accent-kendrick {
-  background: linear-gradient(135deg, rgba(220,20,60,0.15) 0%, rgba(10,10,10,0.05) 100%);
-  border-left: 3px solid var(--kendrick-red);
-}
-
-.accent-f1 {
-  background: linear-gradient(135deg, rgba(220,0,0,0.12) 0%, rgba(6,0,239,0.08) 100%);
-  border-left: 3px solid var(--ferrari);
-}
-
-.accent-basketball {
-  background: linear-gradient(135deg, rgba(255,140,0,0.12) 0%, rgba(193,154,107,0.08) 100%);
-  border-left: 3px solid var(--basketball);
-}
-
-/* hover effects */
-.hover-premium {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
-}
-
-.hover-premium:hover {
-  transform: translateY(-4px) translateZ(0);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(183,255,0,0.15);
-}
-
-/* Animated gradient borders */
-@keyframes gradientBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.border-animated {
-  background: linear-gradient(90deg, var(--ferrari), var(--kendrick-red), var(--ravens-purple), var(--silver));
-  background-size: 300% 300%;
-  animation: gradientBorder 8s ease infinite;
-}
-
-/*glass morphism */
-.glass-premium {
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(10px) saturate(140%);
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 
-    0 8px 32px 0 rgba(0,0,0,0.37),
-    inset 0 1px 0 0 rgba(255,255,255,0.05);
-  will-change: transform;
-}
-
-@media (max-width: 768px) {
-  .glass-premium {
-    backdrop-filter: blur(14px) saturate(160%);
-  }
-}
-
-/* Themed icon styles */
-.icon-kendrick::before {
-  content: '♔';  /* Crown for DAMN./royalty */
-  color: var(--kendrick-red);
-  font-size: 1.2em;
-  margin-right: 8px;
-}
-
-.icon-f1::before {
-  content: '🏎';  /* Racing car */
-  margin-right: 8px;
-}
-
-.icon-basketball::before {
-  content: '🏀';  /* Basketball */
-  margin-right: 8px;
+@media (min-width: 768px) {
+  .sectionPad { padding: 120px 0; }
 }

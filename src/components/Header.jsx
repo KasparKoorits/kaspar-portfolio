@@ -21,9 +21,9 @@ function Header() {
   const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
-        <div className="mt-3 sm:mt-4 glass px-4 sm:px-5 py-3 sm:py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-[100]">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10 py-3 sm:py-4">
+        <div className="glass px-4 sm:px-5 py-3 sm:py-4 flex items-center justify-between">
           <a
             href="#home"
             onClick={go("#home")}
