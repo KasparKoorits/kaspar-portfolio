@@ -34,9 +34,7 @@ export default function SceneAbout() {
                       <div className="text-2xl md:text-2xl font-black tracking-tight text-cream text-cinematic">
                         Kaspar Koorits
                       </div>
-                      <div className="mt-1 text-base md:text-[0.98rem] text-purple font-bold uppercase tracking-wide">
-                        3rd year @ Tartu Vocational College
-                      </div>
+                      <div>3rd year @ Tartu Vocational College</div>
                       <div className="mt-4 text-base md:text-[0.98rem] text-cream/85 leading-relaxed font-medium">
                         My name is Kaspar Koorits, and I am 18 years old. I am currently studying software development at the Tartu Vocational College.
                         I chose this field because I have always been interested in computers and technology. Although I only had really basic knowledge of software development from my primary school, Kõrveküla Põhikool, I really wanted to learn more.
