@@ -20,10 +20,7 @@ export default function SceneAbout() {
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 sm:gap-12 lg:gap-16 items-start">
             <div>
               <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">About · Me</div>
-              <div className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.03em] leading-[0.88] text-statement">
-                <span className="impact-text">A bit</span> about me
-              </div>
-
+              <div className="mt-3 text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.03em] leading-[0.88] text-statement">A bit about me</div>
               <div className="mt-10">
                 <div className="relative max-w-[640px]">
                   <div className="relative flex flex-col sm:flex-row items-start gap-5">

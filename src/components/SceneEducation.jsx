@@ -14,9 +14,7 @@ function SceneEducation() {
       <div className="glass px-4 sm:px-7 md:px-12 py-10 sm:py-14 md:py-16">
         <motion.div {...fadeUp}>
           <div className="text-xs tracking-[0.3em] uppercase text-silver font-bold subtitle-text">Education · Background</div>
-          <div className="mt-3 text-2xl sm:text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">
-            <span className="impact-text">Where</span> I've studied
-          </div>
+          <div className="mt-3 text-2xl sm:text-3xl md:text-5xl font-black tracking-[-0.03em] text-statement">Where I've studied</div>
           <div className="mt-4 text-base text-cream/75 max-w-[70ch] font-medium leading-relaxed">
             My education from primary school to where I am now.
           </div>
