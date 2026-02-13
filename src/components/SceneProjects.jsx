@@ -27,16 +27,13 @@ function SceneProjects() {
               href={p.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative ink p-6 hover:border-kendrick-red/50 transition-all duration-300 border border-kendrick-red/20 rounded-[18px] overflow-hidden"
+              className="group relative ink p-6 hover:border-kendrick-red/40 transition-all duration-300 border border-kendrick-red/20 rounded-xl"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2, margin: "0px 0px -100px 0px" }}
               transition={{ delay: 0.06 + i * 0.06, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -6, scale: 1.02 }}
             >
-              {/* Premium gradient overlay on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-kendrick-red/8 via-ravens-purple/5 to-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
               <div className="relative">
                 <div className="flex items-start justify-between gap-4">
                   <div className="font-black tracking-tight text-lg sm:text-xl text-cream text-cinematic">{p.title}</div>
