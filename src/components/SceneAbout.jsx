@@ -2,9 +2,9 @@ import { useState, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const items = [
-    { id: "basketball", label: "Basketball", tag: "🏀 Sports", body: "I've been playing basketball since I was a kid. Over the years it's taught me how to work with others and stay consistent, even when things get tough, on and off the court.", title: "BASKETBALL" },
+    { id: "basketball", label: "Basketball", tag: "🏀 Sports", body: "I've been playing basketball since I was a 3 years old. Over the years it's taught me how to work with others and stay consistent, even when things get tough, on and off the court.", title: "BASKETBALL" },
     { id: "ravens", label: "Ravens", tag: "🏈 Ravens", body: "Huge Baltimore Ravens and Lamar Jackson fan. Watching Lamar Jackson play through tough games and still find a way to win has taught me a lot about not giving up when things look bad.", title: "RAVENS" },
-    { id: "simracing", label: "Sim Racing", tag: "🏎️ Sim racing", body: "I spend way too much time sim racing. One small mistake can mess up your entire lap, and honestly that's pretty similar to coding where one typo can break everything.", title: "RACING" },
+    { id: "simracing", label: "Sim Racing", tag: "🏎️ Sim racing", body: "I have been simracing since 2020, competing in multiple championships over the years, achieving 2nd place in Estonia with our team, R8G Simtech.", title: "RACING" },
     { id: "motorsport", label: "Formula 1", tag: "🏁 Motorsport", body: "I'm into Formula 1. It's cool seeing how teams obsess over every tiny detail to get faster, from pit stops to aerodynamics. It has made me realize how much small things matter.", title: "MOTORSPORT" },
     { id: "kendrick", label: "Music", tag: "🎵 Music", body: "I listen to a lot of Kendrick Lamar. His lyrics always have deeper meanings that make you think. It reminds me to actually put some thought into the stuff I do, be it coding or playing games.", title: "MUSIC" }
 ];
@@ -31,7 +31,7 @@ export default function SceneAbout() {
                                     <div className="text-cream/70 font-semibold">3rd year @ Tartu Vocational College</div>
                                     <p className="text-base text-cream/80 leading-relaxed">
                                         My name is Kaspar Koorits, and I am 18 years old. I am currently studying software development at the Tartu Vocational College.
-                                        I chose this field because I have always been interested in computers and technology. Although I only had basic knowledge of software development from my primary school, Kõrveküla Põhikool, I wanted to learn more.
+                                        I chose this field because I have always been interested in computers and technology. Although I only had basic knowledge of software development from my primary school, Kõrveküla Põhikool, I wanted to learn more, with the wish of one day becoming an actual software developer.
                                     </p>
                                 </div>
                             </div>
